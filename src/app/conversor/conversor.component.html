@@ -1,0 +1,42 @@
+<style>
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+</style>
+<div class="position-absolute top-50 start-50 translate-middle bg-dark text-black text-center rounded p-5">
+    <h1 class="text-white mb-4 pt-2">Conversor de moedas</h1>
+    <div class="row justify-content-center">
+        <div class="input-group mb-3 mt-5"> <span class="input-group-text">Real (R$)</span>
+            <div class="form-floating"> <input type="number" [(ngModel)]="valorReal" class="form-control text-black"
+                    id="floatingInputGroup1" placeholder="" class="form-control text-black"
+                    [value]="zero !== null ? valorReal : ''"> <label for="floatingInputGroup1 text-black">Digite o valor
+                    em Real!</label> </div>
+        </div>
+        <div class="input-group mb-3"> <span class="input-group-text">Dólar ($)</span>
+            <div class="form-floating"> <input type="number" [(ngModel)]="valordolar" class="form-control text-black"
+                    id="floatingInputGroup1" placeholder="" class="form-control text-black"
+                    [value]="zero !== null ? valordolar : ''"> <label for="floatingInputGroup1 text-black">Digite a
+                    cotação do Dólar!</label> </div>
+        </div>
+        <div class="input-group mb-3"> <span class="input-group-text">Libra (£)</span>
+            <div class="form-floating"> <input type="number" [(ngModel)]="valorlibra" class="form-control text-black"
+                    id="floatingInputGroup1" placeholder="" class="form-control text-black"
+                    [value]="zero !== null ? valorlibra : ''"> <label for="floatingInputGroup1 text-black">Digite a
+                    cotação da Libra!</label> </div>
+        </div>
+        <div class="input-group mb-3"> <span class="input-group-text">Euro (Є)</span>
+            <div class="form-floating"> <input type="number" [(ngModel)]="valoreuro" class="form-control text-black"
+                    id="floatingInputGroup1" placeholder="" class="form-control text-black"
+                    [value]="zero !== null ? valoreuro : ''"> <label for="floatingInputGroup1 text-black">Digite a
+                    cotação do Euro!</label> </div>
+        </div>
+    </div>
+    <div class="mt-5"> <button type="button" class="btn btn-warning btn-lg" (click)="operacao()">Converter</button>
+    </div>
+    <div class="input-group mb-3 mt-5"> <span class="input-group-text text-success">Dólar ($)</span> <input
+            type="number" class="rounded-end form-control text-success" [(ngModel)]="resultadodolar" disabled> <span
+            class="input-group-text ms-5 rounded-start text-danger">Libra (£)</span> <input type="number"
+            class="rounded-end form-control disabled text-danger" [(ngModel)]="resultadolibra" disabled> <span
+            class="input-group-text ms-5 rounded-start text-primary">Euro (Є)</span> <input type="number"
+            class="form-control disabled text-primary" [(ngModel)]="resultadoeuro" disabled> </div>
